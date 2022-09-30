@@ -1,0 +1,15 @@
+
+
+<%= form_with model: @user do |form| %>
+  <br><br>
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message|%>\
+      <h4><%= message %> </h4>
+    <%end%>
+  <%end%>
+
+  Username: <%= form.text_field :username %><br><br>
+  Password: <%= form.text_field :password %><br><br>
+  Email: <%= form.text_field :email %><br><br>
+  <%= form.submit "Update" %>
+<% end %>
